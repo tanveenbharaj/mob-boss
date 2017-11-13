@@ -55,8 +55,6 @@ export default new Vuex.Store({
             suggestBreaks: true,
             breakIntervals: 5
         },
-        selectedTheme:''
-
     },
     actions,
     getters,

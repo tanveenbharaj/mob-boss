@@ -3,14 +3,6 @@
         <div class='row '>
             <div class="col-sm-12">
                 <button class="btn btn-default btn-sm pull-right" @click="setAdminDisplayOff" :disabled="isDisabledClose">Close</button>
-                <select v-model="selected" @change="changeTheme(selected)">
-                    <option disabled value="">Please select one</option>
-                    <option value="cerulean">cerulean</option>
-                    <option value="cosmo">cosmo</option>
-                    <option selected value="flatly"> flatly</option>
-                    <option value="solar">solar</option>
-                </select>
-                <span>Selected: {{ selected }}</span>
             </div>
         </div>
         <div class='row'>
@@ -30,10 +22,10 @@
                                 <div class="form-group tight-bottom">
                                     <label  for="mob-name">Mob Name</label>
                                     <input
-                                        type="text"
-                                        class="form-control"
-                                        id="mob-name"
-                                        v-model="name">
+                                            type="text"
+                                            class="form-control"
+                                            id="mob-name"
+                                            v-model="name">
                                 </div>
                                 <div class="note">mob url: /mob-example</div>
                             </div>
@@ -41,18 +33,18 @@
                         <div class='row'>
                             <div class="col-sm-12">
                                 <input-checkbox
-                                    name='show_feature_name'
-                                    v-model="featureNameOption">
-                                    Add a feature name.  Displays on front page.
+                                        name='show_feature_name'
+                                        v-model="featureNameOption">
+                                    Check to Add JIRA Task.
                                 </input-checkbox>
 
                                 <div class="form-group tight-bottom margin-top-15" v-if="featureNameOption">
                                     <label  for="feature-name">Jira Task Id</label>
                                     <input
-                                        type="text"
-                                        class="form-control"
-                                        id="feature-name"
-                                        v-model="featureName">
+                                            type="text"
+                                            class="form-control"
+                                            id="feature-name"
+                                            v-model="featureName">
                                     <button type="button"
                                             class="btn btn-primary btn-sm margin-top-15"
                                             v-on:click="getTaskDetailsFromJira"
@@ -128,12 +120,12 @@
                         </div>
 
                         <div class='row'>
-                                    <button type="button"
-                                            class="btn btn-primary btn-sm margin-left-15"
-                                            v-on:click="saveJiraConfiguration"
-                                            :disabled="isDisabledSave"
-                                        >
-                                        Save</button>
+                            <button type="button"
+                                    class="btn btn-primary btn-sm margin-left-15"
+                                    v-on:click="saveJiraConfiguration"
+                                    :disabled="isDisabledSave"
+                            >
+                                Save</button>
                         </div>
 
                         <div class='row'>
@@ -151,17 +143,17 @@
             <div class="col-sm-4">
                 <h3>Long Term Storange</h3>
                 <p>
-                <input-checkbox
-                    name='long-term'
-                    v-model="save">
-                    Use long term storage
-                </input-checkbox>
+                    <input-checkbox
+                            name='long-term'
+                            v-model="save">
+                        Use long term storage
+                    </input-checkbox>
                 </p>
 
                 <confirm-alert
-                    v-if="alerts.mobDeletionWarning"
-                    @confirm="confirmMobDeletion"
-                    buttonType="yesNo">If you turn off long term storage, anything currently saved will be removed. Do you want to permanently delete your long term storage?</confirm-alert>
+                        v-if="alerts.mobDeletionWarning"
+                        @confirm="confirmMobDeletion"
+                        buttonType="yesNo">If you turn off long term storage, anything currently saved will be removed. Do you want to permanently delete your long term storage?</confirm-alert>
                 <confirm-alert v-if="alerts.mobNeedsName" @confirm="confirmMobName">You must have a mob name before you can use long term storage.</confirm-alert>
                 <p>MobBoss is not responsible for loss of data.  Data is secure only to the extent needed by the MobBoss applicaiton.  Store sensitive information at your own risk.</p>
                 <p v-if="save && slug">Report Page: <a :href="'/report/'+ slug"> /report/{{ slug }}</a></p>
@@ -183,39 +175,39 @@
                             <div class='form-inline'>
                                 <label for="timer-duration">Duration: </label>
                                 <input
-                                    type="text"
-                                    class="form-control input-sm shrink-box"
-                                    id="timer-duration"
-                                    v-model="timerDuration">
-                                    minutes
+                                        type="text"
+                                        class="form-control input-sm shrink-box"
+                                        id="timer-duration"
+                                        v-model="timerDuration">
+                                minutes
 
                             </div>
                         </div>
                         <div class="form-group">
                             <input-checkbox
-                                name="flash-browser"
-                                v-model="flashBrowser">
+                                    name="flash-browser"
+                                    v-model="flashBrowser">
                                 Flash title when timer is up
                             </input-checkbox>
                         </div>
                         <div class="form-group">
                             <input-checkbox
-                                name="play-sound"
-                                v-model="playSound">
+                                    name="play-sound"
+                                    v-model="playSound">
                                 Play sound when timer is up
                             </input-checkbox>
                         </div>
-                         <div class="form-group">
-                             <div class='form-inline'>
+                        <div class="form-group">
+                            <div class='form-inline'>
                                 <input-checkbox
-                                    name="suggest-breaks"
-                                    v-model="suggestBreaks">
+                                        name="suggest-breaks"
+                                        v-model="suggestBreaks">
                                     Suggest breaks after
                                     <input
-                                        type="text"
-                                        class="form-control input-sm shrink-box"
-                                        name="typing-reps"
-                                        v-model="typingReps"> timers finish
+                                            type="text"
+                                            class="form-control input-sm shrink-box"
+                                            name="typing-reps"
+                                            v-model="typingReps"> timers finish
 
                                 </input-checkbox>
 
@@ -238,8 +230,8 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <input-checkbox
-                                name="tasks-severity"
-                                v-model="tasksBySeverity">
+                                    name="tasks-severity"
+                                    v-model="tasksBySeverity">
                                 Order by severity
                             </input-checkbox>
                         </div>
@@ -261,8 +253,8 @@
                     <div class="panel-body">
                         <div class="form-group">
                             <input-checkbox
-                                name="notes-severity"
-                                v-model="notesBySeverity">
+                                    name="notes-severity"
+                                    v-model="notesBySeverity">
                                 Order by severity
                             </input-checkbox>
                         </div>
@@ -287,11 +279,7 @@
     import Vue from 'vue'
     import axios from 'axios'
     import VueAxios from 'vue-axios'
-    import bus from '../bus'
-
     Vue.use(VueAxios, axios)
-
-   // Vue.use(axios)
 
     export default {
         data() {
@@ -304,8 +292,7 @@
                 messageFetch: '',
                 disabledSave: false,
                 disabledFetch: false,
-                disabledClose: false,
-                selected: ''
+                disabledClose: false
             }
         },
         computed: {
@@ -443,26 +430,37 @@
                         this.messageFetch = "Jira task already exists."
                         this.disabledFetch = false
                         this.disabledClose = false
+                        setTimeout(() => {
+                            this.messageFetch = ''
+                        }, 3000)
                         return;
                     }
                 }
 
-                    this.axios.get(api).then((response) => {
-                        let res = response.data
-                        if (res == '') {
-                            this.messageFetch = "Server Error or incorrect credentials."
-                        } else if (res.errorMessages) {
-                            this.messageFetch = res.errorMessages[0];
-                        } else {
-                            this.$store.commit('taskAdd', res)
-                            this.messageFetch = "Jira task added successfully."
-                        }
-                        this.disabledFetch = false
-                        this.disabledClose = false
-                    })
+                this.axios.get(api).then((response) => {
+                    let res = response.data
+                    if (res == '') {
+                        this.messageFetch = "Server Error or incorrect credentials."
+                        this.$store.state.featureName=''
+                        setTimeout(() => {
+                            this.messageFetch = ''
+                        }, 3000)
+                    } else if (res.errorMessages) {
+                        this.messageFetch = res.errorMessages[0];
+                        this.$store.state.featureName=''
+                    } else {
+                        this.$store.commit('taskAdd', res)
+                        this.messageFetch = "Jira task added successfully."
+                        setTimeout(() => {
+                            this.messageFetch = ''
+                        }, 3000)
+                    }
+                    this.disabledFetch = false
+                    this.disabledClose = false
+                })
 
 
-        },
+            },
             saveJiraConfiguration(){
                 let api='/save-config';
                 this. messageSave = ''
@@ -476,8 +474,14 @@
                     let res = response.data
                     if(res == 'ok') {
                         this.messageSave = "Jira credentials saved."
+                        setTimeout(() => {
+                            this.messageSave = ''
+                        }, 3000)
                     } else {
                         this.messageSave = "Jira credentials failed to save."
+                        setTimeout(() => {
+                            this.messageSave = ''
+                        }, 3000)
                     }
                     this.disabledSave = false
                     this.disabledClose = false
@@ -486,11 +490,6 @@
             setMessageToDefault() {
                 this.messageFetch =''
                 this.messageSave = ''
-            },
-            changeTheme(selected){
-                console.log("chnagetheme called",selected);
-                this.$store.state.selectedTheme = selected;
-                bus.$emit('selectedTheme', this.$store.state.selectedTheme)
             }
         }
     }

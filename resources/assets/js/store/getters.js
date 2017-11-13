@@ -34,7 +34,6 @@ export const assembled = state => {
             sessionLength: state.timer.sessionLength
         },
         timerOptions: state.timerOptions,
-        isActive: state.isActive,
-        selectedTheme:state.selectedTheme
+        isActive: state.isActive
     })
 }

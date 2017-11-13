@@ -56,7 +56,7 @@
     import VueAxios from 'vue-axios'
 
     Vue.use(VueAxios, axios)
-  //  var csrf_token = $('meta[name="csrf-token"]').attr('content');
+    //  var csrf_token = $('meta[name="csrf-token"]').attr('content');
 
     export default {
         data () {
@@ -168,6 +168,9 @@
                         }, 3000)
                     }else{
                         this.commentMsg = "Comment failed to add"
+                        setTimeout(() => {
+                            this.commentMsg = ''
+                        }, 3000)
                         this.commentDelete(this.comments.indexOf(comment))
                     }
                 })
