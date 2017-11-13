@@ -1,0 +1,65 @@
+.timerapp {
+    .panel-body {
+
+        .counter {
+            margin-top: 0px;
+            margin-bottom: 10px;
+            text-align:center;
+            font-family: Orbitron;
+            font-size: 100px;
+
+        }
+
+        @media (min-width: 400px) {
+            .counter {
+                font-size: 75px;
+            }
+        }
+
+        @media (min-width: 500px) {
+            .counter {
+                font-size: 100px;
+            }
+        }
+
+        @media (min-width: 990px) {
+            .counter {
+                font-size: 50px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .counter {
+                font-size: 75px;
+            }
+        }
+
+        @media (min-width: 1550px) {
+            .counter {
+                font-size: 100px;
+            }
+        }
+
+
+        .controllers {
+            top: -30px;
+
+            .btn, .btn:active, .btn:focus {
+                outline:0 !important;
+            }
+
+        }
+    }
+    .break {
+        background-color: $btn-danger-bg;
+        color: $btn-danger-color;
+        border:2px solid $btn-danger-border;
+        padding:20px;
+        font-style: italic;
+
+        .end-break {
+            font-style: none;
+        }
+    }
+
+}

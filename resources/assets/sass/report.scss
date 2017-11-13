@@ -1,0 +1,9 @@
+.report-board {
+    margin:20px 0 0 0;
+
+    .blurbs {
+        color: $component-active-color;
+        border-radius: $border-radius-base;
+        padding: $padding-small-vertical $padding-small-horizontal;
+    }
+}

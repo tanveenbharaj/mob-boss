@@ -1,0 +1,52 @@
+.notesapp
+{
+    .edit {
+        outline: none;
+        border-color:rgba(0,0,0,0.1);
+        padding: 5px;
+        margin:2px;
+        position: relative;
+        width: 100%;
+        background: rgba(255,255,255,0.5);
+    }
+
+    .note-list {
+
+        position:relative;
+
+        .alert {
+
+            position:relative;
+            padding-bottom:25px;
+
+            .button-bar {
+                position:relative;
+                -webkit-appearance: none;
+                appearance: none;
+                border: none;
+                visibility: hidden;
+            }
+
+            &:hover .button-bar {
+                visibility: visible;
+            }
+
+
+            &.editing {
+                padding: 15px 15px 25px 15px;
+            }
+
+            &.editing .edit {
+                display: block;
+            }
+
+            &.editing .view {
+                display: none;
+            }
+
+            .edit {
+                display: none;
+            }
+        }
+    }
+}

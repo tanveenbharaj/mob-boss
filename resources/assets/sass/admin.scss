@@ -1,0 +1,18 @@
+.admin-panel {
+    .note {
+        font-size: $font-size-small;
+        color:$gray-light;
+    }
+
+    .tight-bottom {
+        padding-bottom:0;
+        margin-bottom:2px;
+    }
+
+    .has-success {
+        /*color:#000000; */
+    }
+    .shrink-box {
+        width:50px !important;
+    }
+}

@@ -1,0 +1,33 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700');
+
+
+// Variables
+@import "variables";
+//@import "./flatly/_variables";
+@import "./cerulean/_variables";
+//@import "./solar/_variables";
+//@import "./cosmo/_variables";
+
+
+
+// Bootstrap
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "./flatly/_bootswatch.scss";
+@import "./cerulean/_bootswatch.scss";
+//@import "./solar/_bootswatch.scss";
+//@import "./cosmo/_bootswatch.scss";
+
+@import "admin";
+@import "animate";
+@import "custom-inputs";
+@import "main";
+@import "notes";
+@import "participants";
+@import "report";
+@import "tasks";
+@import "tab-panel";
+@import "timer";
+@import "transitions";

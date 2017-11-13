@@ -1,0 +1,134 @@
+.styled-checkbox {
+
+    .styled-checkbox-input {
+        position: absolute; // take it out of document flow
+        opacity: 0; // hide it
+        vertical-align: middle;
+
+        & + label {
+            position: relative;
+            cursor: pointer;
+            display:inline;
+            font-weight:normal;
+        }
+
+        // Box.
+        & + label:before {
+            content: '';
+            border-radius:2px;
+            display: inline-block;
+            vertical-align: text-top;
+            width: 20px;
+            height: 20px;
+            border:1px solid $btn-default-border;
+            background: $gray-lighter;
+        }
+
+        // Box hover
+        &:hover + label:before {
+            background: $gray-light;
+        }
+
+        // Box focus
+        &:focus + label:before {
+            /* box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); */
+        }
+
+        // Box checked
+        &:checked + label:before {
+            background: $brand-primary;
+        }
+
+        // Disabled state label.
+        &:disabled + label {
+            color: $gray;
+            cursor: auto;
+        }
+
+        // Disabled box.
+        &:disabled + label:before {
+            box-shadow: none;
+            background: $gray-lighter;
+        }
+
+        // Checkmark. Could be replaced with an image
+        &:checked + label:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 9px;
+            background: white;
+            width: 2px;
+            height: 2px;
+            box-shadow:
+            2px 0 0 white,
+            4px 0 0 white,
+            4px -2px 0 white,
+            4px -4px 0 white,
+            4px -6px 0 white,
+            4px -8px 0 white;
+            transform: rotate(45deg);
+        }
+    }
+
+    .checkbox-success {
+        .styled-checkbox-input {
+            // Box checked
+            &:checked + label:before {
+                background: $brand-success;
+            }
+        }
+    }
+    .checkbox-info {
+        .styled-checkbox-input {
+            // Box checked
+            &:checked + label:before {
+                background: $brand-info;
+            }
+        }
+    }
+
+    .checkbox-warning {
+        .styled-checkbox-input {
+            // Box checked
+            &:checked + label:before {
+                background: $brand-warning;
+            }
+        }
+    }
+
+    .checkbox-danger {
+        .styled-checkbox-input {
+            // Box checked
+            &:checked + label:before {
+                background: $brand-danger;
+            }
+        }
+    }
+}
+
+
+.custom-btn-rank {
+
+    postion: relative;
+
+    .btn, .btn:active, .btn:focus {
+        outline:0 !important;
+    }
+
+    .selected-button {
+        border-top-left-radius: $border-radius-small !important;
+        border-bottom-left-radius: $border-radius-small !important;
+    }
+
+    .vertical-holder {
+        position:absolute !important;
+        right:0px;
+        z-index:1000;
+
+        .invisable {
+            visibility: hidden;
+        }
+    }
+
+}

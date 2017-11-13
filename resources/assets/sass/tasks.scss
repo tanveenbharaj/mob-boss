@@ -1,0 +1,76 @@
+.tasksapp {
+
+    .edit {
+        outline: none;
+        border-color:rgba(0,0,0,0.1);
+        line-height: 1.4em;
+        position: relative;
+        background: rgba(255,255,255,0.5);
+        width:100%;
+    }
+
+    .task-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            position: relative;
+
+            .button-bar {
+                position: absolute;
+                -webkit-appearance: none;
+                appearance: none;
+                background: none;
+                border: none;
+                display: none;
+                top: 10px;
+                right: 10px;
+
+            }
+            &:hover .button-bar {
+                display: block;
+            }
+
+
+            &.editing .edit {
+                display: block;
+                padding: 5px;
+            }
+
+            &.editing .view {
+                display: none;
+            }
+
+            &.completed label {
+                text-decoration: line-through;
+            }
+
+            label {
+                font-weight: normal;
+                word-break: break-all;
+            }
+
+            .edit {
+                display: none;
+            }
+
+        }
+    }
+
+    .task-footer {
+        margin: 10px 0 0 0;
+
+        .btn {
+            outline: none;
+        }
+        .clean-tasks {
+            cursor:pointer;
+            margin-top:5px;
+        }
+
+        &:hover .clean-tasks {
+            color:rgba(0,0,0,.8);
+        }
+    }
+}

@@ -1,0 +1,94 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+
+.component-fade-enter-active, .component-fade-leave-active {
+  transition: opacity .3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for <2.1.8 */ {
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flipInClockwise {
+
+    from {
+        transform: perspective(400px);
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes flipOutClockwise {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, -90deg);
+    }
+
+    to {
+        transform: perspective(400px);
+    }
+}
+
+.turn-clockwise-enter-active {
+    animation: flipOutClockwise .5s;
+}
+.turn-clockwise-leave-active {
+    animation: flipInClockwise  .5s;
+}
+
+@keyframes flipInCounterClockwise {
+
+    from {
+        transform: perspective(400px);
+        animation-timing-function: ease-in;
+    }
+
+    to {
+        transform: perspective(400px) rotate3d(0, 1, 0, -90deg);
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes flipOutCounterClockwise {
+    from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    }
+
+    to {
+        transform: perspective(400px);
+    }
+}
+
+.turn-counter-clockwise-enter-active {
+    animation: flipOutCounterClockwise .5s;
+}
+.turn-counter-clockwise-leave-active {
+    animation: flipInCounterClockwise  .5s;
+}
+
+

@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch-poll": "npm run watch -- --watch-poll",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "ava",
+    "postinstall": "yarn run production"
+  },
+  "ava": {
+    "files": [
+      "tests/ScriptTests/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "./tests/ScriptTests/helpers/setup-browser-env.js"
+    ]
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "ava": "^0.19.1",
+    "axios": "^0.16.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "bootstrap-auto-dismiss-alert": "^1.0.2",
+    "bootstrap-sass": "^3.3.7",
+    "browser-env": "^2.0.30",
+    "cross-env": "^5.1.1",
+    "jquery": "^3.1.1",
+    "laravel-mix": "^1.0.*",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "vue": "^2.3.3",
+    "vue-axios": "^2.0.2",
+    "vuedraggable": "^2.14.1",
+    "vuex": "^2.3.1",
+    "yarn": "^1.2.1"
+  }
+}
